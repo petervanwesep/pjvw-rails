@@ -1,0 +1,5 @@
+== README
+
+This is my personal website.
+
+Inspiration for the typing text was taken from http://manuelmoreale.com.
