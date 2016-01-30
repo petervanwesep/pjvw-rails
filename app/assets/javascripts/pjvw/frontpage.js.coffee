@@ -7,7 +7,6 @@ document.addEventListener 'DOMContentLoaded', ->
   logo = document.querySelector('.logo')
   role = ['Backend', 'Frontend', 'Full Stack']
   tw = typewriter(document.querySelector('.logo')).withAccuracy(100).withMinimumSpeed(15).withMaximumSpeed(18).build()
-
   tw.wait(2500)
     .type('Peter van Wesep', ->
       document.querySelector('.navbar').classList.add 'active'

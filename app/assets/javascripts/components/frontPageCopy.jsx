@@ -14,6 +14,7 @@ var FrontPageCopy = React.createClass({
   openNavItem: function (itemText) {
     $('.content').removeClass('active');
     this.setState({ displayedCopy: itemText });
+    Pjvw.Ga.sendPageView(itemText);
     window.location.hash = itemText;
     window.setTimeout(function() {
       $('.content').addClass('active');

@@ -17,4 +17,7 @@
 //= require react_ujs
 //= require components
 //= require typewriter
-//= require_tree .
+//= require pjvw/pjvw
+//= require pjvw/frontpage
+//= require pjvw/ga
+
