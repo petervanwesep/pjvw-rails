@@ -44,6 +44,8 @@ var FrontPageCopy = React.createClass({
       return(<K12 />);
     } else if(this.state.displayedCopy == 'contact') {
       return(<ContactForm />);
+    } else if(this.state.displayedCopy == 'resume') {
+      return(<Resume />);
     } else {
       return(<Default />);
     }
@@ -61,9 +63,53 @@ var Default = React.createClass({
   }
 });
 
+var Resume = React.createClass({
+  render: function() {
+    return(
+      <div className="resume content">
+        <section className="work">
+          <h1>Senior Software Engineer at <a href="https://www.tanga.com">Tanga.com</a> (2013 - 2015)</h1>
+          <ul>
+            <li>Implemented interactive customer service form in AngularJS/React capable of loading dynamic content through an internal API</li>
+            <li>Wrote a large portion of non-trivial database queries/functions in SQL to avoid eager loading and other adverse side effects of using ActiveRecord</li>
+            <li>Packaged distinct units of business logic into separate gems/services to aid testing and simplify development</li>
+            <li>Member of scrum team committed to daily stand-ups, weekly planning/retrospectives and 100% paired code</li>
+          </ul>
+          <h1>Software Engineer at <a href="http://upwork.com/">Upwork (formerly oDesk)</a> (2011 - 2013)</h1>
+          <ul>
+            <li>Designed and deployed a RESTful ecommerce API using Node.js/Express/Q</li>
+            <li>Led initiatives in all levels of the development cycle from monitoring/provisioning EC2 servers, to optimizing SQL/ActiveRecord queries, to implementing views using Bootstrap and Haml/Erb</li>
+            <li>Wrote a mix of JS/CoffeeScript using jQuery, Backbone.js</li>
+          </ul>
+          <h1>Software Consultant (2009 - 2011)</h1>
+          <ul>
+            <li>Developed tool to allow non-technical users to flag meaningful sections of a document and automatically generate code to extract data from similarly formatted documents</li>
+            <li>Deployed a Facebook application using Facebook’s PHP and JavaScript SDKs which provides users with an alternative interface for posting to pages they are fans of</li>
+          </ul>
+          </section>
+        <section className="education">
+          <h1>education</h1>
+          <h1><p>University of Washington (Seattle, WA)</p></h1>
+          <p>Bachelor of Science</p>
+          <p>Major: Computer Science</p>
+          <p>Graduated 2009</p>
+        </section>
+        <section className="research">
+          <h1>publication</h1>
+          <h1><p><a href="http://www.usenix.org/events/nsdi10/tech/full_papers/katz-bassett.pdf">Reverse Traceroute</a></p></h1>
+          <p>Katz-Bassett, H. V. Madhyastha, V. Kumar Adhikari, C. Scott, J. Sherry, P. van Wesep, T. Anderson, A. Krishnamurthy</p>
+          <p>USENIX Symposium on Networked Systems Design & Implementation</p>
+          <p>April 28-30, 2010</p>
+          <p>San Jose, CA</p>
+          <p>Awarded Best Paper</p>
+        </section>
+      </div>
+    );
+  }
+});
+
 var About = React.createClass({
   openContactForm: function() {
-    console.log(this.props);
     this.props.openNavItem('contact');
   },
 
