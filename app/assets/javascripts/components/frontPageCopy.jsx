@@ -129,13 +129,13 @@ var Code = React.createClass({
   render: function() {
     return(
       <section className="content">
-        <p>Unlike most professions, coding lets me create digital worlds out of a few hundred lines of text. Unfortunately, it also lets me create entire worlds of pain in even fewer.</p>
-        <p>I've adopted a few guidelines that help me stay (for the most part) in the former camp:</p>
+        <p>My experience writing code has led me to recommend the following best practices:</p>
         <ol>
-          <li>Code should be well-tested and easy to maintain. While adding technical debt may be necessary for rapid developement, it should be paid off as soon as possible.</li>
+          <li>Feature development should be test-driven and new code should be written in small, easily testable units. Shortcuts which add technical debt should be avoided, with rare exceptions.</li>
           <li>Release cycles should be kept short, thus providing the team with a clear focus and giving stakeholders an immediate opportunity for feedback.</li>
-          <li>Teams should be small and tightly knit. Code should be paired on whenever possible. One philosophy that has stuck with me is to consider "people as your product". Without highly collaborative teams who are passionate about their product, it is impossible to achieve the best results.</li>
-          <li>And finally, ideas that don't lead to the best results should be abandoned for better ideas.</li>
+          <li>All aspects of the development cycle that can be automated should be automated (eg. continuous testing/integration, code generators for any common implementation patterns). This avoids human error and allows developers to spend their time solving new problems.</li>
+          <li>Teams should be kept small and tightly knit. Pairing on code whenever possible leads to higher code quality and increased communication among team members. A passionate, highly communicative development team achieves the best results.</li>
+          <li>Any ideas that lead to suboptimal results should be deprecated in favor of better ideas.</li>
         </ol>
       </section>
     );
