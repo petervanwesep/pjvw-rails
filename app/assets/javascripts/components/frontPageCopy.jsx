@@ -53,6 +53,22 @@ var FrontPageCopy = React.createClass({
   }
 });
 
+var Header = React.createClass({
+  render: function() {
+    return(
+      <header>
+          <noscript>
+              <h1 class="logo">Peter van Wesep, Full Stack Engineer</h1>
+          </noscript>
+          <h1 class="logo"></h1>
+          <a class="glyphicon-download-link" href='#'>
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+          </a>
+      </header>
+    );
+  }
+});
+
 var Default = React.createClass({
   render: function() {
     return(
@@ -133,7 +149,7 @@ var Code = React.createClass({
         <ol>
           <li>Feature development should be test-driven and new code should be written in small, easily testable units. Shortcuts which add technical debt should be avoided, with rare exceptions.</li>
           <li>Release cycles should be kept short, thus providing the team with a clear focus and giving stakeholders an immediate opportunity for feedback.</li>
-          <li>All aspects of the development cycle that can be automated should be automated (eg. continuous testing/integration, code generators for any common implementation patterns). This avoids human error and allows developers to spend their time solving new problems.</li>
+          <li>All aspects of the development cycle which can be automated should be automated (eg. continuous testing/integration, code generators for any common implementation patterns). This avoids human error and allows developers to spend their time solving new problems.</li>
           <li>Teams should be kept small and tightly knit. Pairing on code whenever possible leads to higher code quality and increased communication among team members. A passionate, highly communicative development team achieves the best results.</li>
           <li>Any ideas that lead to suboptimal results should be deprecated in favor of better ideas.</li>
         </ol>
