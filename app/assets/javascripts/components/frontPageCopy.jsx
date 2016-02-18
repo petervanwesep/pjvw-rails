@@ -145,7 +145,7 @@ var Code = React.createClass({
   render: function() {
     return(
       <section className="content">
-        <p>My experience writing code has led me to recommend the following best practices:</p>
+        <p>My experience writing code has led me to some preferred development practices:</p>
         <ol>
           <li>Feature development should be test-driven and new code should be written in small, easily testable units. Shortcuts which add technical debt should be avoided, with rare exceptions.</li>
           <li>Release cycles should be kept short, thus providing the team with a clear focus and giving stakeholders an immediate opportunity for feedback.</li>
