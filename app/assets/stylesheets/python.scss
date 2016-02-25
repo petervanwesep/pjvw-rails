@@ -1,0 +1,27 @@
+// Place all the styles related to the python controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  position: relative;
+}
+
+#output {
+  position: absolute;
+  top: 500px;
+  left: 10%;
+  font-size: 20px;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+  #output {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+  }
+}

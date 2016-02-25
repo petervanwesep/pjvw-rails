@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>peter van wesep</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"           content="Full stack web developer seeks beautiful, highly performant site to build">
+    <meta name="viewport"              content="width=device-width,initial-scale=1">
+
+    <title>Peter van Wesep, Full Stack Engineer</title>
+    <meta property="og:title"     content="Peter van Wesep, Full Stack Engineer">
+    <meta property="og:url"       content="http://pjvw.io">
+    <meta property="og:site_name" content="Peter van Wesep, Full Stack Engineer">
+    <meta property="og:type"      content="website">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
+
+
+    <script type="text/javascript">
+    // output functions are configurable.  This one just appends some text
+    // to a pre element.
+    function outf(text) {
+        var mypre = document.getElementById("output");
+        mypre.innerHTML = mypre.innerHTML + text;
+    }
+    function builtinRead(x) {
+        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                throw "File not found: '" + x + "'";
+        return Sk.builtinFiles["files"][x];
+    }
+    // Here's everything you need to run a python program in skulpt
+    // grab the code from your textarea
+    // get a reference to your pre element for output
+    // configure the output function
+    // call Sk.importMainWithBody()
+    function runit() {
+       var prog = document.getElementById("code").innerHTML;
+
+       var prog = prog.replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#039;/g, "'");
+
+       var mypre = document.getElementById("output");
+       mypre.innerHTML = '';
+       Sk.pre = "output";
+       Sk.configure({output:outf, read:builtinRead});
+       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+       var myPromise = Sk.misceval.asyncToPromise(function() {
+           return Sk.importMainWithBody("<stdin>", false, prog, true);
+       });
+       myPromise.then(function(mod) {
+           console.log('success');
+       },
+           function(err) {
+           console.log(err.toString());
+       });
+    }
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-46094883-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <%= stylesheet_link_tag    'python', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body onload="runit()">
+    <%= yield %>
+    <%= javascript_include_tag 'skulpt', 'data-turbolinks-track' => true %>
+  </body>
+</html>

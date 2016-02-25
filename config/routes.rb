@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   resources "contact_forms", only: [:create]
+  get "zork" => 'python#zork'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
