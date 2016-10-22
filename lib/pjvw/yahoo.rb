@@ -14,7 +14,7 @@ class Yahoo
   private
 
   def account
-    @account ||= Mail.defaults do
+    Mail.defaults do
       retriever_method :pop3,
         address: "pop.mail.yahoo.com",
         port: 995,
