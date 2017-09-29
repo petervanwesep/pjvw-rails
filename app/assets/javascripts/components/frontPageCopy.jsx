@@ -134,7 +134,6 @@ var About = React.createClass({
     return(
       <section className="content">
         <p>I am a web engineer happily located in Oakland, CA.</p>
-        <p>I'm currently looking for full-time work and am also open to interesting consulting jobs.</p>
         <p>Please <a onClick={this.openContactForm}>get in touch</a> if you think I'd be a good fit for your project.</p>
       </section>
     );
