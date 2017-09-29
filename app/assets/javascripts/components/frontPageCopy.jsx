@@ -85,6 +85,8 @@ var Resume = React.createClass({
     return(
       <div className="resume content">
         <section className="work">
+          <h1>Senior Software Engineer at <a href="https://www.brightbytes.net">Brightbytes</a> (2016 - 2017)</h1>
+
           <h1>Senior Software Engineer at <a href="https://www.tanga.com">Tanga.com</a> (2013 - 2015)</h1>
           <ul>
             <li>Implemented interactive customer service form in AngularJS/React capable of loading dynamic content through an internal API</li>
