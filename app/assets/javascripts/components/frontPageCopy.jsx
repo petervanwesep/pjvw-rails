@@ -85,8 +85,15 @@ var Resume = React.createClass({
     return(
       <div className="resume content">
         <section className="work">
-          <h1>Senior Software Engineer at <a href="https://www.brightbytes.net">Brightbytes</a> (2016 - 2017)</h1>
-
+          <h1>Senior Software Engineer at <a href="https://www.brightbytes.net">BrightBytes</a> (2015 - 2018)</h1>
+          <ul>
+            <li>Developed and maintained multiple RoR platforms/APIs and JS apps (Angular/React) while employing agile best practices</li>
+            <li>Dockerized Rails/Elixir applications to simplify bootstrapping and allow for deployment to managed AWS infrastructure (Convox)</li>
+            <li>Led development of availability critical, cross-platform Elixir application</li>
+            <li>Performed scheduled deployments of Elixir/RoR apps to Heroku/Convox</li>
+            <li>Refactored legacy code to remove unexpected side effects, inject dependencies and otherwise improve overall code quality</li>
+            <li>Communicated frequently and effectively in a cross-functional team environment</li>
+          </ul>
           <h1>Senior Software Engineer at <a href="https://www.tanga.com">Tanga.com</a> (2013 - 2015)</h1>
           <ul>
             <li>Implemented interactive customer service form in AngularJS/React capable of loading dynamic content through an internal API</li>
