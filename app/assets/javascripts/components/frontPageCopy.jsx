@@ -1,17 +1,18 @@
-var FrontPageCopy = React.createClass({
-  getInitialState: function() {
+class FrontPageCopy extends React.Component {
+  constructor(props) {
+    super(props);
+
     if(window.location.hash) {
       var displayedCopy = window.location.hash.replace('#','');
     } else {
       var displayedCopy = 'default';
     }
 
-    return {
-      displayedCopy: displayedCopy
-    };
-  },
+    this.state = { displayedCopy: displayedCopy };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  openNavItem: function (itemText) {
+  openNavItem(itemText) {
     $('.content').removeClass('active');
     this.setState({ displayedCopy: itemText });
     Pjvw.Ga.sendPageView(itemText);
@@ -19,24 +20,24 @@ var FrontPageCopy = React.createClass({
     window.setTimeout(function() {
       $('.content').addClass('active');
     }, 200);
-  },
+  }
 
-  handleClick: function (e) {
+  handleClick(e) {
     var navItemText = $(e.target).data('react-copy');
     if (navItemText) {
       this.openNavItem(navItemText)
     }
-  },
+  }
 
-  componentWillMount: function () {
+  componentWillMount() {
     document.addEventListener('click', this.handleClick, false);
-  },
+  }
 
-  componentWillUnmount: function () {
+  componentWillUnmount() {
     document.removeEventListener('click', this.handleClick, false);
-  },
+  }
 
-  render: function() {
+  render() {
     if(this.state.displayedCopy == 'about') {
       return(<About openNavItem={this.openNavItem}/>);
     } else if(this.state.displayedCopy == 'code') {
@@ -51,10 +52,10 @@ var FrontPageCopy = React.createClass({
       return(<Default />);
     }
   }
-});
+}
 
-var Header = React.createClass({
-  render: function() {
+class Header extends React.Component {
+  render() {
     return(
       <header>
           <noscript>
@@ -67,10 +68,10 @@ var Header = React.createClass({
       </header>
     );
   }
-});
+}
 
-var Default = React.createClass({
-  render: function() {
+class Default extends React.Component {
+  render() {
     return(
       <section className="content">
         <p>Hi. My name is Peter. I'm a musician, cyclist and K-12 education activist.</p>
@@ -78,10 +79,10 @@ var Default = React.createClass({
       </section>
     );
   }
-});
+}
 
-var Resume = React.createClass({
-  render: function() {
+class Resume extends React.Component {
+  render() {
     return(
       <div className="resume content">
         <section className="work">
@@ -133,14 +134,14 @@ var Resume = React.createClass({
       </div>
     );
   }
-});
+}
 
-var About = React.createClass({
-  openContactForm: function() {
+class About extends React.Component {
+  openContactForm() {
     this.props.openNavItem('contact');
-  },
+  }
 
-  render: function() {
+  render() {
     return(
       <section className="content">
         <p>I am a web engineer happily located in Oakland, CA.</p>
@@ -148,10 +149,10 @@ var About = React.createClass({
       </section>
     );
   }
-});
+}
 
-var Code = React.createClass({
-  render: function() {
+class Code extends React.Component {
+  render() {
     return(
       <section className="content">
         <p>My experience writing code has led me to some preferred development practices:</p>
@@ -165,10 +166,10 @@ var Code = React.createClass({
       </section>
     );
   }
-})
+}
 
-var K12 = React.createClass({
-  render: function() {
+class K12 extends React.Component {
+  render() {
     return(
       <section className='content'>
         <p>I've spent a large part of my life, in one form or another, pursuing my love of teaching.</p>
@@ -178,7 +179,7 @@ var K12 = React.createClass({
       </section>
     );
   }
-});
+}
 
 ReactDOM.render(
   <FrontPageCopy />,

@@ -1,6 +1,7 @@
-var ContactForm = React.createClass({
-  getInitialState: function () {
-    return {
+class ContactForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       showSuccess: false,
       showFailure: false,
       contactForm: {
@@ -9,15 +10,16 @@ var ContactForm = React.createClass({
         message: ''
       }
     }
-  },
+    this.setcontactForm = this.setcontactForm.bind(this);
+    this.setAlert = this.setAlert.bind(this);
+  }
 
-  setcontactForm: function(key, value) {
+  setcontactForm(key, value) {
     this.state.contactForm[key] = value;
-  },
+  }
 
-  setAlert: function(status) {
+  setAlert(status) {
     _this = this;
-    console.log(status);
     if (status === 'success') {
       this.setState({showSuccess: true});
       window.setTimeout(function() {
@@ -29,9 +31,9 @@ var ContactForm = React.createClass({
         _this.setState({showFailure: false});
       }, 3500);
     }
-  },
+  }
 
-  render: function() {
+  render() {
     return(
       <div>
         <section className="content">
@@ -56,34 +58,41 @@ var ContactForm = React.createClass({
       </div>
     );
   }
-});
+}
 
-var AlertSuccess = React.createClass({
-  render: function() {
+class AlertSuccess extends React.Component {
+  render() {
     return(
-      <div class="alert alert-success" role="alert">
+      <div className="alert alert-success" role="alert">
         <strong>Thanks!</strong> I'll get back to you as soon as I can.
       </div>
     );
   }
-});
+}
 
-var AlertFailure = React.createClass({
-  render: function() {
+class AlertFailure extends React.Component {
+  render() {
     return(
-      <div class="alert alert-danger" role="alert">
-        <strong>Hm...</strong>Your message wasn't sent. Maybe try me on <a href="https://www.linkedin.com/in/peter-van-wesep-1b6a7a10" class="alert-link">LinkedIn</a>?
+      <div className="alert alert-danger" role="alert">
+        <strong>Hm...</strong>Your message wasn't sent. Maybe try me on <a href="https://www.linkedin.com/in/peter-van-wesep-1b6a7a10" className="alert-link">LinkedIn</a>?
       </div>
     );
   }
-});
+}
 
-var ContactFormName = React.createClass({
-  handleChange: function(e) {
+class ContactFormField extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+}
+
+class ContactFormName extends ContactFormField {
+  handleChange(e) {
     this.props.setcontactForm('name', e.target.value);
-  },
+  }
 
-  render: function() {
+  render() {
     return(
       <div className="form-group">
         <label className="col-sm-2 control-label">Name</label>
@@ -93,14 +102,14 @@ var ContactFormName = React.createClass({
       </div>
     );
   }
-});
+}
 
-var ContactFormEmail = React.createClass({
-  handleChange: function(e) {
+class ContactFormEmail extends ContactFormField {
+  handleChange(e) {
     this.props.setcontactForm('email', e.target.value);
-  },
+  }
 
-  render: function() {
+  render() {
     return(
       <div className="form-group">
         <label className="col-sm-2 control-label">Email</label>
@@ -110,14 +119,14 @@ var ContactFormEmail = React.createClass({
       </div>
     );
   }
-});
+}
 
-var ContactFormMessage = React.createClass({
-  handleChange: function(e) {
+class ContactFormMessage extends ContactFormField {
+  handleChange(e) {
     this.props.setcontactForm('message', e.target.value);
-  },
+  }
 
-  render: function() {
+  render() {
     return(
       <div className="form-group">
         <label className="col-sm-2 control-label">Message</label>
@@ -127,10 +136,15 @@ var ContactFormMessage = React.createClass({
       </div>
     );
   }
-});
+}
 
-var ContactFormSubmit = React.createClass({
-  submit: function() {
+class ContactFormSubmit extends React.Component {
+  constructor(props) {
+    super(props);
+    this.submit = this.submit.bind(this);
+  }
+
+  submit() {
     _this = this;
     $.post(
       '/contact_forms',
@@ -139,9 +153,9 @@ var ContactFormSubmit = React.createClass({
         _this.props.setAlert(status);
       }
     );
-  },
+  }
 
-  render: function() {
+  render() {
     return(
       <div className="form-group">
         <div className="submit col-sm-offset-9 col-sm-2 pull-left">
@@ -150,4 +164,4 @@ var ContactFormSubmit = React.createClass({
       </div>
     );
   }
-});
+}
