@@ -9,6 +9,7 @@ class FrontPageCopy extends React.Component {
     }
 
     this.state = { displayedCopy: displayedCopy };
+    this.openNavItem = this.openNavItem.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -137,6 +138,11 @@ class Resume extends React.Component {
 }
 
 class About extends React.Component {
+  constructor(props) {
+    super(props);
+    this.openContactForm = this.openContactForm.bind(this);
+  }
+
   openContactForm() {
     this.props.openNavItem('contact');
   }
