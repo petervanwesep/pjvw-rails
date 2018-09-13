@@ -73,7 +73,7 @@ class Default extends React.Component {
   render() {
     return(
       <section className="content">
-        <p>Hi. My name is Peter. I'm a musician, cyclist and K-12 education activist.</p>
+        <p>Hi. My name is Peter. I'm a musician, cyclist and coffee drinker extraordinaire.</p>
         <p>I also build websites.</p>
       </section>
     );
