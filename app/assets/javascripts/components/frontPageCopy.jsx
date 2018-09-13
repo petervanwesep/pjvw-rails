@@ -84,7 +84,7 @@ class Resume extends React.Component {
   render() {
     return(
       <div className="resume content">
-        <a href="resume.pdf"><i class="fas fa-print"></i></a>
+        <a href="resume.pdf" target="_blank"><i class="fas fa-print"></i></a>
         <section className="work">
           <h1>Senior Software Engineer at <a href="https://www.brightbytes.net">BrightBytes</a> (2015 - 2018)</h1>
           <ul>
