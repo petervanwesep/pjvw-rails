@@ -8,7 +8,7 @@ document.addEventListener 'DOMContentLoaded', ->
   role = ['Backend', 'Frontend', 'Full Stack']
   tw = typewriter(document.querySelector('.logo')).withAccuracy(100).withMinimumSpeed(15).withMaximumSpeed(18).build()
   tw.wait(1500)
-    .type('Peter van Wesep', ->
+    .type('Pete van Wesep', ->
       document.querySelector('.navbar').classList.add 'active'
     )
     .wait(800)
@@ -20,7 +20,7 @@ document.addEventListener 'DOMContentLoaded', ->
     .deleteNChars(role[1].length)
     .wait(850)
     .type(role[2])
-    .type(" Engineer", ->
+    .type(" Engineering Manager", ->
       document.querySelector('body').classList.add('active')
       document.querySelector('.content').classList.add('active')
       document.querySelector('.footer').classList.add('active')

@@ -39,16 +39,16 @@ class FrontPageCopy extends React.Component {
   }
 
   render() {
-    if(this.state.displayedCopy == 'about') {
-      return(<About openNavItem={this.openNavItem}/>);
-    } else if(this.state.displayedCopy == 'code') {
+    if(this.state.displayedCopy == 'code') {
       return(<Code />);
     } else if(this.state.displayedCopy == 'contact') {
       return(<ContactForm />);
     } else if(this.state.displayedCopy == 'resume') {
       return(<Resume />);
+    } else if(this.state.displayedCopy == 'me') {
+      return(<About />);
     } else {
-      return(<Default />);
+      return(<About />);
     }
   }
 }
@@ -58,7 +58,7 @@ class Header extends React.Component {
     return(
       <header>
           <noscript>
-              <h1 class="logo">Peter van Wesep, Full Stack Engineer</h1>
+              <h1 class="logo">Pete van Wesep, Engineering Manager</h1>
           </noscript>
           <h1 class="logo"></h1>
           <a class="glyphicon-download-link" href='#'>
@@ -69,12 +69,22 @@ class Header extends React.Component {
   }
 }
 
-class Default extends React.Component {
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+    this.openContactForm = this.openContactForm.bind(this);
+  }
+
+  openContactForm() {
+    this.props.openNavItem('contact');
+  }
+
   render() {
     return(
       <section className="content">
-        <p>Hi. My name is Peter. I'm a musician, cyclist and coffee drinker extraordinaire.</p>
-        <p>I also build websites.</p>
+        <p>I am a web engineer happily located in Seattle, WA.  I like to build software, enable high performance teams and workshop dad jokes with my family.</p>
+        <p>We are <a href='https://jobs.lever.co/forge'>actively hiring</a> for our brand new Seattle office.</p>
+        <p>Please <a onClick={this.openContactForm}>get in touch</a> if you're interested in applying or just getting in touch.</p>
       </section>
     );
   }
@@ -86,6 +96,17 @@ class Resume extends React.Component {
       <div className="resume content">
         <a href="resume.pdf" target="_blank"><i class="fas fa-print"></i></a>
         <section className="work">
+          <h1>Engineering Manager at <a href="https://www.forgeglobal.com">Forge</a> (2020 - TBD)</h1>
+          <ul>
+            <li>Individual contributor.</li>
+            <li>Coach direct reports on their personal and professional goals.</li>
+            <li>Navigate the cultural side effects of merging with our biggest competitor's technology team.</li>
+          </ul>
+          <h1>Lead Engineer/Engineering Manager at <a href="https://www.sharespost.com">Sharespost</a> (2018 - 2020)</h1>
+          <ul>
+            <li>Led teams of 4-5 engineers responsible for improving the liquidity options available to employees and other shareholders of private market companies</li>
+            <li>Coordinate architecture and development work of a high-volume secondary market trading platform</li>
+          </ul>
           <h1>Senior Software Engineer at <a href="https://www.brightbytes.net">BrightBytes</a> (2015 - 2018)</h1>
           <ul>
             <li>Developed and maintained multiple RoR platforms/APIs and JS apps (Angular/React) while employing agile best practices</li>
@@ -132,26 +153,6 @@ class Resume extends React.Component {
           <p>Awarded Best Paper</p>
         </section>
       </div>
-    );
-  }
-}
-
-class About extends React.Component {
-  constructor(props) {
-    super(props);
-    this.openContactForm = this.openContactForm.bind(this);
-  }
-
-  openContactForm() {
-    this.props.openNavItem('contact');
-  }
-
-  render() {
-    return(
-      <section className="content">
-        <p>I am a web engineer happily located in Oakland, CA.</p>
-        <p>Please <a onClick={this.openContactForm}>get in touch</a> if you think I'd be a good fit for your project.</p>
-      </section>
     );
   }
 }
