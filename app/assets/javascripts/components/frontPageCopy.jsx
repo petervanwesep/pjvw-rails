@@ -58,11 +58,11 @@ class Header extends React.Component {
     return(
       <header>
           <noscript>
-              <h1 class="logo">Pete van Wesep, Engineering Manager</h1>
+              <h1 className="logo">Pete van Wesep, Engineering Manager</h1>
           </noscript>
-          <h1 class="logo"></h1>
-          <a class="glyphicon-download-link" href='#'>
-            <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+          <h1 className="logo"></h1>
+          <a className="glyphicon-download-link" href='#'>
+            <span className="glyphicon glyphicon-download" aria-hidden="true"></span>
           </a>
       </header>
     );
@@ -94,7 +94,7 @@ class Resume extends React.Component {
   render() {
     return(
       <div className="resume content">
-        <a href="resume.pdf" target="_blank"><i class="fas fa-print"></i></a>
+        <a href="resume.pdf" target="_blank"><i className="fas fa-print"></i></a>
         <section className="work">
           <h1>Engineering Manager at <a href="https://www.forgeglobal.com">Forge</a> (2020 - TBD)</h1>
           <ul>

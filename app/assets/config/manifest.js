@@ -19,4 +19,4 @@
 //= require pjvw/pjvw
 //= require pjvw/frontpage
 //= require pjvw/ga
-
+//= link_directory ../stylesheets text/css

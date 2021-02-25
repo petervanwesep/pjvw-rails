@@ -97,7 +97,7 @@ class ContactFormName extends ContactFormField {
       <div className="form-group">
         <label className="col-sm-2 control-label">Name</label>
         <div className="col-sm-10">
-          <input onChange={this.handleChange} type="text" className="form-control" id="name" name="name" placeholder="First & Last Name" required='true'/>
+          <input onChange={this.handleChange} type="text" className="form-control" id="name" name="name" placeholder="First & Last Name" required/>
         </div>
       </div>
     );
