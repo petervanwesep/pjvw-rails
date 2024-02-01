@@ -83,7 +83,6 @@ class About extends React.Component {
     return(
       <section className="content">
         <p>Hands-on engineering leader with a proven record of elevating business value through software. Happily located in Seattle, WA 🌦️ ⛰️ 🌊</p>
-        <p>Do you have an exciting project or idea? <a onClick={this.openContactForm}>Let's talk</a>!</p>
       </section>
     );
   }
