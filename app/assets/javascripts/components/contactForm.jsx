@@ -74,7 +74,7 @@ class AlertFailure extends React.Component {
   render() {
     return(
       <div className="alert alert-danger" role="alert">
-        <strong>Hm...</strong>Your message wasn't sent. Maybe try me on <a href="https://www.linkedin.com/in/peter-van-wesep-1b6a7a10" className="alert-link">LinkedIn</a>?
+        <strong>Hm...</strong>Your message wasn't sent. Maybe try me on <a href="https://www.linkedin.com/in/petevanwesep/" className="alert-link">LinkedIn</a>?
       </div>
     );
   }

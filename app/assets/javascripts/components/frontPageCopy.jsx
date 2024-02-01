@@ -95,6 +95,7 @@ class Resume extends React.Component {
       <div className="resume content">
         <a href="resume.pdf" target="_blank"><i className="fas fa-print"></i></a>
         <section className="work">
+          <h1>Experience</h1>
           <h1>Director of Engineering at <a href="https://www.forgeglobal.com">Forge</a> (2018 - Present)</h1>
           <ul>
             <li>Manage multiple full-stack teams focused on providing services related to customer identity verification, risk management and user access controls</li>
@@ -124,14 +125,14 @@ class Resume extends React.Component {
           </ul>
           </section>
         <section className="education">
-          <h1>education</h1>
+          <h1>Education</h1>
           <h1><p>University of Washington (Seattle, WA)</p></h1>
           <p>Bachelor of Science</p>
           <p>Major: Computer Science</p>
           <p>Graduated 2009</p>
         </section>
         <section className="research">
-          <h1>publication</h1>
+          <h1>Publication</h1>
           <h1><p><a href="http://www.usenix.org/events/nsdi10/tech/full_papers/katz-bassett.pdf">Reverse Traceroute</a></p></h1>
           <p>Katz-Bassett, H. V. Madhyastha, V. Kumar Adhikari, C. Scott, J. Sherry, P. van Wesep, T. Anderson, A. Krishnamurthy</p>
           <p>USENIX Symposium on Networked Systems Design & Implementation</p>
