@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.hidden {
+  display: none;
+}
+
 .content {
   margin-top: 3.4rem;
   padding-bottom: 3.4rem;

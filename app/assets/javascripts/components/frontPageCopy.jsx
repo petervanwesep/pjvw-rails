@@ -58,7 +58,7 @@ class Header extends React.Component {
     return(
       <header>
           <noscript>
-              <h1 className="logo">Pete van Wesep, Engineering Manager</h1>
+              <h1 className="logo">Pete van Wesep, Engineering Leader</h1>
           </noscript>
           <h1 className="logo"></h1>
           <a className="glyphicon-download-link" href='#'>
@@ -82,9 +82,8 @@ class About extends React.Component {
   render() {
     return(
       <section className="content">
-        <p>I am a web engineer happily located in Seattle, WA.  I like to build software, enable high performance teams and workshop dad jokes with my family.</p>
-        <p>We are <a href='https://jobs.lever.co/forge'>actively hiring</a> for our brand new Seattle office.</p>
-        <p>Please <a onClick={this.openContactForm}>get in touch</a> if you're interested in applying or just getting in touch.</p>
+        <p>Hands-on engineering leader with a proven record of elevating business value through software. Happily located in Seattle, WA 🌦️ ⛰️ 🌊</p>
+        <p>Do you have an exciting project or idea? <a onClick={this.openContactForm}>Let's talk</a>!</p>
       </section>
     );
   }
@@ -96,39 +95,27 @@ class Resume extends React.Component {
       <div className="resume content">
         <a href="resume.pdf" target="_blank"><i className="fas fa-print"></i></a>
         <section className="work">
-          <h1>Engineering Manager at <a href="https://www.forgeglobal.com">Forge</a> (2020 - TBD)</h1>
+          <h1>Director of Engineering at <a href="https://www.forgeglobal.com">Forge</a> (2018 - Present)</h1>
           <ul>
-            <li>Individual contributor.</li>
-            <li>Coach direct reports on their personal and professional goals.</li>
-            <li>Navigate the cultural side effects of merging with our biggest competitor's technology team.</li>
-          </ul>
-          <h1>Lead Engineer/Engineering Manager at <a href="https://www.sharespost.com">Sharespost</a> (2018 - 2020)</h1>
-          <ul>
-            <li>Led teams of 4-5 engineers responsible for improving the liquidity options available to employees and other shareholders of private market companies</li>
-            <li>Coordinate architecture and development work of a high-volume secondary market trading platform</li>
+            <li>Manage multiple full-stack teams focused on providing services related to customer identity verification, risk management and user access controls</li>
+            <li>Developed a C#-based customer identity aggregation service for KYC checks on ECS, utilizing tools like Harbor, Istio, Jaeger, and Dapr to ensure robust and efficient operations.</li>
+            <li>Spearheaded design of an IDP-agnostic, policy-as-code user access management service</li>
+            <li>Effectively managed my team through two major transitions - the 2020 merger of Sharespost and Forge Global and Forge’s 2021 debut as a public company. Adapted team workflows to meet the needs and compliance requirements of a publicly traded entity.</li>
+            <li>Directed the rapid prototyping of Forge’s initial data product offering, Forge Intelligence. Applied sprint forecasting and in-depth retrospective analysis to ensure productivity and alignment with business goals.</li>
           </ul>
           <h1>Senior Software Engineer at <a href="https://www.brightbytes.net">BrightBytes</a> (2015 - 2018)</h1>
           <ul>
-            <li>Developed and maintained multiple RoR platforms/APIs and JS apps (Angular/React) while employing agile best practices</li>
-            <li>Dockerized Rails/Elixir applications to simplify bootstrapping and allow for deployment to managed AWS infrastructure</li>
-            <li>Responsible for interviewing new engineering candidates and making hiring decisions</li>
-            <li>Led development of availability critical, cross-platform Elixir application</li>
-            <li>Performed scheduled deployments of Elixir/RoR apps to managed infrastructure (Heroku, Convox)</li>
-            <li>Refactored legacy code to remove unexpected side effects, inject dependencies and otherwise improve overall code quality</li>
-            <li>Communicated frequently and effectively in a cross-functional team environment</li>
+            <li>Led development and maintenance of multiple RoR platforms/APIs and Angular/React applications, championing agile methodologies to enhance team efficiency and product quality.</li>
+            <li>Pioneered the dockerization of Rails/Elixir applications, streamlining the bootstrapping process and facilitating seamless deployment to AWS, thereby enhancing operational efficiency and scalability.</li>
+            <li>Owned the development of a high-availability Elixir application leveraged by multiple platform services</li>
           </ul>
           <h1>Senior Software Engineer at <a href="https://www.tanga.com">Tanga.com</a> (2013 - 2015)</h1>
           <ul>
-            <li>Implemented interactive customer service form in AngularJS/React capable of loading dynamic content through an internal API</li>
-            <li>Wrote a large portion of non-trivial database queries/functions in SQL to avoid eager loading and other adverse side effects of using ActiveRecord</li>
-            <li>Packaged distinct units of business logic into separate gems/services to aid testing and simplify development</li>
-            <li>Member of scrum team committed to daily stand-ups, weekly planning/retrospectives and 100% paired code</li>
+            <li>Contributed to e-commerce site built using AngularJS/Ruby on Rails. Development team embraced continuous integration/deployment, TDD, and striving for 100% paired code.</li>
           </ul>
           <h1>Software Engineer at <a href="http://upwork.com/">Upwork (formerly oDesk)</a> (2011 - 2013)</h1>
           <ul>
-            <li>Designed and deployed a RESTful ecommerce API using Node.js/Express/Q</li>
-            <li>Led initiatives in all levels of the development cycle from monitoring/provisioning EC2 servers, to optimizing SQL/ActiveRecord queries, to implementing views using Bootstrap and Haml/Erb</li>
-            <li>Wrote a mix of JS/CoffeeScript using jQuery, Backbone.js</li>
+            <li>Built and maintained an e-commerce API using NodeJS, Express and Q promises library</li>
           </ul>
           <h1>Software Consultant (2009 - 2011)</h1>
           <ul>
